@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 gamere: a owl:Ontology ;
     mod:createdWith <https://chowlk.linkeddata.es/> .
@@ -86,8 +87,7 @@ owl:sameAs rdf:type owl:DatatypeProperty ;
     rdfs:label "same as" ;
     rdfs:domain [ 
         rdf:type owl:Class ;
-        owl:unionOf ( gamere:Concello gamere:Praia gamere:Provincia )
-    ] ;
+        owl:unionOf ( gamere:Concello gamere:Praia gamere:Provincia )] ;
     rdfs:range xsd:anyURI .
 
 gamere:Provincia a owl:Class ;

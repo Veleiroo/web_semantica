@@ -5,8 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.w3.org/2002/07/owl#> .
 
-[ rdf:type owl:Ontology ;
-   <http://example.invalid/ontologies/ont.owl#title> "\"Ontología de las Playas con bandera azul de Galicia\""
+[ rdf:type owl:Ontology
  ] .
 
 #################################################################
@@ -111,8 +110,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q996161
-<https://www.wikidata.org/entity/Q996161> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15008
 <http://example.org/resource/concello/15008> rdf:type owl:NamedIndividual ,
@@ -124,8 +121,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q644018
-<https://www.wikidata.org/entity/Q644018> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15016
 <http://example.org/resource/concello/15016> rdf:type owl:NamedIndividual ,
@@ -137,8 +132,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1373985
-<https://www.wikidata.org/entity/Q1373985> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15019
 <http://example.org/resource/concello/15019> rdf:type owl:NamedIndividual ,
@@ -150,8 +143,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q166137
-<https://www.wikidata.org/entity/Q166137> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15030
 <http://example.org/resource/concello/15030> rdf:type owl:NamedIndividual ,
@@ -163,8 +154,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q8757
-<https://www.wikidata.org/entity/Q8757> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15034
 <http://example.org/resource/concello/15034> rdf:type owl:NamedIndividual ,
@@ -176,8 +165,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q549319
-<https://www.wikidata.org/entity/Q549319> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15036
 <http://example.org/resource/concello/15036> rdf:type owl:NamedIndividual ,
@@ -189,8 +176,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q485329
-<https://www.wikidata.org/entity/Q485329> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15041
 <http://example.org/resource/concello/15041> rdf:type owl:NamedIndividual ,
@@ -202,8 +187,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q924043
-<https://www.wikidata.org/entity/Q924043> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15048
 <http://example.org/resource/concello/15048> rdf:type owl:NamedIndividual ,
@@ -215,8 +198,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1616112
-<https://www.wikidata.org/entity/Q1616112> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15058
 <http://example.org/resource/concello/15058> rdf:type owl:NamedIndividual ,
@@ -228,8 +209,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q688611
-<https://www.wikidata.org/entity/Q688611> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15068
 <http://example.org/resource/concello/15068> rdf:type owl:NamedIndividual ,
@@ -241,8 +220,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1450823
-<https://www.wikidata.org/entity/Q1450823> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15113
 <http://example.org/resource/concello/15113> rdf:type owl:NamedIndividual ,
@@ -254,8 +231,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q596761
-<https://www.wikidata.org/entity/Q596761> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15117
 <http://example.org/resource/concello/15117> rdf:type owl:NamedIndividual ,
@@ -267,8 +242,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1620185
-<https://www.wikidata.org/entity/Q1620185> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15143
 <http://example.org/resource/concello/15143> rdf:type owl:NamedIndividual ,
@@ -280,8 +253,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q996161
-<https://www.wikidata.org/entity/Q996161> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15250
 <http://example.org/resource/concello/15250> rdf:type owl:NamedIndividual ,
@@ -293,8 +264,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q578957
-<https://www.wikidata.org/entity/Q578957> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15320
 <http://example.org/resource/concello/15320> rdf:type owl:NamedIndividual ,
@@ -306,8 +275,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1442761
-<https://www.wikidata.org/entity/Q1442761> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15406
 <http://example.org/resource/concello/15406> rdf:type owl:NamedIndividual ,
@@ -319,8 +286,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q485329
-<https://www.wikidata.org/entity/Q485329> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15630
 <http://example.org/resource/concello/15630> rdf:type owl:NamedIndividual ,
@@ -332,8 +297,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1616112
-<https://www.wikidata.org/entity/Q1616112> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/15940
 <http://example.org/resource/concello/15940> rdf:type owl:NamedIndividual ,
@@ -345,8 +308,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q300525
-<https://www.wikidata.org/entity/Q300525> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27005
 <http://example.org/resource/concello/27005> rdf:type owl:NamedIndividual ,
@@ -358,8 +319,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1634820
-<https://www.wikidata.org/entity/Q1634820> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27013
 <http://example.org/resource/concello/27013> rdf:type owl:NamedIndividual ,
@@ -371,8 +330,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1616622
-<https://www.wikidata.org/entity/Q1616622> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27019
 <http://example.org/resource/concello/27019> rdf:type owl:NamedIndividual ,
@@ -384,8 +341,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q917878
-<https://www.wikidata.org/entity/Q917878> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27025
 <http://example.org/resource/concello/27025> rdf:type owl:NamedIndividual ,
@@ -397,8 +352,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1111013
-<https://www.wikidata.org/entity/Q1111013> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27051
 <http://example.org/resource/concello/27051> rdf:type owl:NamedIndividual ,
@@ -410,8 +363,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q824076
-<https://www.wikidata.org/entity/Q824076> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27064
 <http://example.org/resource/concello/27064> rdf:type owl:NamedIndividual ,
@@ -423,8 +374,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q944524
-<https://www.wikidata.org/entity/Q944524> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27066
 <http://example.org/resource/concello/27066> rdf:type owl:NamedIndividual ,
@@ -436,8 +385,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q641221
-<https://www.wikidata.org/entity/Q641221> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27792
 <http://example.org/resource/concello/27792> rdf:type owl:NamedIndividual ,
@@ -449,8 +396,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1634820
-<https://www.wikidata.org/entity/Q1634820> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/27902
 <http://example.org/resource/concello/27902> rdf:type owl:NamedIndividual ,
@@ -462,8 +407,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1619456
-<https://www.wikidata.org/entity/Q1619456> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36004
 <http://example.org/resource/concello/36004> rdf:type owl:NamedIndividual ,
@@ -475,8 +418,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1632909
-<https://www.wikidata.org/entity/Q1632909> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36023
 <http://example.org/resource/concello/36023> rdf:type owl:NamedIndividual ,
@@ -488,8 +429,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q300433
-<https://www.wikidata.org/entity/Q300433> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36026
 <http://example.org/resource/concello/36026> rdf:type owl:NamedIndividual ,
@@ -501,8 +440,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q634078
-<https://www.wikidata.org/entity/Q634078> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36029
 <http://example.org/resource/concello/36029> rdf:type owl:NamedIndividual ,
@@ -514,8 +451,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1617430
-<https://www.wikidata.org/entity/Q1617430> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36041
 <http://example.org/resource/concello/36041> rdf:type owl:NamedIndividual ,
@@ -527,8 +462,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1631776
-<https://www.wikidata.org/entity/Q1631776> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36043
 <http://example.org/resource/concello/36043> rdf:type owl:NamedIndividual ,
@@ -540,8 +473,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1631751
-<https://www.wikidata.org/entity/Q1631751> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36051
 <http://example.org/resource/concello/36051> rdf:type owl:NamedIndividual ,
@@ -553,8 +484,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q840355
-<https://www.wikidata.org/entity/Q840355> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36057
 <http://example.org/resource/concello/36057> rdf:type owl:NamedIndividual ,
@@ -566,8 +495,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q8745
-<https://www.wikidata.org/entity/Q8745> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36060
 <http://example.org/resource/concello/36060> rdf:type owl:NamedIndividual ,
@@ -579,8 +506,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1442637
-<https://www.wikidata.org/entity/Q1442637> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36226
 <http://example.org/resource/concello/36226> rdf:type owl:NamedIndividual ,
@@ -592,8 +517,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q8745
-<https://www.wikidata.org/entity/Q8745> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36300
 <http://example.org/resource/concello/36300> rdf:type owl:NamedIndividual ,
@@ -605,8 +528,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q748867
-<https://www.wikidata.org/entity/Q748867> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36308
 <http://example.org/resource/concello/36308> rdf:type owl:NamedIndividual ,
@@ -618,8 +539,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q748867
-<https://www.wikidata.org/entity/Q748867> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36393
 <http://example.org/resource/concello/36393> rdf:type owl:NamedIndividual ,
@@ -631,8 +550,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q748867
-<https://www.wikidata.org/entity/Q748867> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36901
 <http://example.org/resource/concello/36901> rdf:type owl:NamedIndividual ,
@@ -644,8 +561,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q300446
-<https://www.wikidata.org/entity/Q300446> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/concello/36992
 <http://example.org/resource/concello/36992> rdf:type owl:NamedIndividual ,
@@ -657,8 +572,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q1631776
-<https://www.wikidata.org/entity/Q1631776> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15005_Combouzas
 <http://example.org/resource/praia/15005_Combouzas> rdf:type owl:NamedIndividual ,
@@ -674,8 +587,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q25509130
-<https://www.wikidata.org/entity/Q25509130> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15005_A%20Salsa
 <http://example.org/resource/praia/15005_A%20Salsa> rdf:type owl:NamedIndividual ,
@@ -691,8 +602,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121438
-<https://www.wikidata.org/entity/Q28121438> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15005_Barra%C3%B1%C3%A1n
 <http://example.org/resource/praia/15005_Barra%C3%B1%C3%A1n> rdf:type owl:NamedIndividual ,
@@ -708,8 +617,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q25509129
-<https://www.wikidata.org/entity/Q25509129> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15005_Playa%20Valcovo
 <http://example.org/resource/praia/15005_Playa%20Valcovo> rdf:type owl:NamedIndividual ,
@@ -725,8 +632,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24024572
-<https://www.wikidata.org/entity/Q24024572> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15005_Sab%C3%B3n
 <http://example.org/resource/praia/15005_Sab%C3%B3n> rdf:type owl:NamedIndividual ,
@@ -742,8 +647,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24003520
-<https://www.wikidata.org/entity/Q24003520> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15008_Gandar%C3%ADo
 <http://example.org/resource/praia/15008_Gandar%C3%ADo> rdf:type owl:NamedIndividual ,
@@ -759,8 +662,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24003799
-<https://www.wikidata.org/entity/Q24003799> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15016_Arou
 <http://example.org/resource/praia/15016_Arou> rdf:type owl:NamedIndividual ,
@@ -776,8 +677,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121645
-<https://www.wikidata.org/entity/Q28121645> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15019_Razo
 <http://example.org/resource/praia/15019_Razo> rdf:type owl:NamedIndividual ,
@@ -793,8 +692,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121665
-<https://www.wikidata.org/entity/Q28121665> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15019_Baldaio%20beach
 <http://example.org/resource/praia/15019_Baldaio%20beach> rdf:type owl:NamedIndividual ,
@@ -810,8 +707,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24003099
-<https://www.wikidata.org/entity/Q24003099> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15019_Pedra%20do%20Sal
 <http://example.org/resource/praia/15019_Pedra%20do%20Sal> rdf:type owl:NamedIndividual ,
@@ -827,8 +722,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121663
-<https://www.wikidata.org/entity/Q28121663> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15030_Beach%20of%20As%20Lapas
 <http://example.org/resource/praia/15030_Beach%20of%20As%20Lapas> rdf:type owl:NamedIndividual ,
@@ -844,8 +737,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q18576114
-<https://www.wikidata.org/entity/Q18576114> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15030_Beach%20of%20Santo%20Amaro
 <http://example.org/resource/praia/15030_Beach%20of%20Santo%20Amaro> rdf:type owl:NamedIndividual ,
@@ -861,8 +752,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20546375
-<https://www.wikidata.org/entity/Q20546375> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15030_Playa%20de%20Oza
 <http://example.org/resource/praia/15030_Playa%20de%20Oza> rdf:type owl:NamedIndividual ,
@@ -878,8 +767,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398085
-<https://www.wikidata.org/entity/Q12398085> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15030_Playa%20del%20Matadero
 <http://example.org/resource/praia/15030_Playa%20del%20Matadero> rdf:type owl:NamedIndividual ,
@@ -895,8 +782,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q18576276
-<https://www.wikidata.org/entity/Q18576276> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15030_Praia%20de%20Riazor
 <http://example.org/resource/praia/15030_Praia%20de%20Riazor> rdf:type owl:NamedIndividual ,
@@ -912,8 +797,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q3399382
-<https://www.wikidata.org/entity/Q3399382> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15034_%C3%89zaro
 <http://example.org/resource/praia/15034_%C3%89zaro> rdf:type owl:NamedIndividual ,
@@ -929,8 +812,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121828
-<https://www.wikidata.org/entity/Q28121828> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15036_Esmelle
 <http://example.org/resource/praia/15036_Esmelle> rdf:type owl:NamedIndividual ,
@@ -946,8 +827,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121842
-<https://www.wikidata.org/entity/Q28121842> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15036_Fragata
 <http://example.org/resource/praia/15036_Fragata> rdf:type owl:NamedIndividual ,
@@ -963,8 +842,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121841
-<https://www.wikidata.org/entity/Q28121841> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15036_Doni%C3%B1os
 <http://example.org/resource/praia/15036_Doni%C3%B1os> rdf:type owl:NamedIndividual ,
@@ -980,8 +857,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121846
-<https://www.wikidata.org/entity/Q28121846> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15036_San%20Xurxo
 <http://example.org/resource/praia/15036_San%20Xurxo> rdf:type owl:NamedIndividual ,
@@ -997,8 +872,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121843
-<https://www.wikidata.org/entity/Q28121843> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15041_Salseira%20de%20Caracoleiro
 <http://example.org/resource/praia/15041_Salseira%20de%20Caracoleiro> rdf:type owl:NamedIndividual ,
@@ -1014,8 +887,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121860
-<https://www.wikidata.org/entity/Q28121860> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15048_Perbes
 <http://example.org/resource/praia/15048_Perbes> rdf:type owl:NamedIndividual ,
@@ -1031,8 +902,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121893
-<https://www.wikidata.org/entity/Q28121893> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15058_Mera
 <http://example.org/resource/praia/15058_Mera> rdf:type owl:NamedIndividual ,
@@ -1048,8 +917,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398083
-<https://www.wikidata.org/entity/Q12398083> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15058_Q28121966
 <http://example.org/resource/praia/15058_Q28121966> rdf:type owl:NamedIndividual ,
@@ -1065,8 +932,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121966
-<https://www.wikidata.org/entity/Q28121966> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15058_A%20Aguieira
 <http://example.org/resource/praia/15058_A%20Aguieira> rdf:type owl:NamedIndividual ,
@@ -1082,8 +947,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20545069
-<https://www.wikidata.org/entity/Q20545069> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15058_Beach%20of%20Bastiagueiro
 <http://example.org/resource/praia/15058_Beach%20of%20Bastiagueiro> rdf:type owl:NamedIndividual ,
@@ -1099,8 +962,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398074
-<https://www.wikidata.org/entity/Q12398074> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15058_Beach%20of%20Santa%20Cristina
 <http://example.org/resource/praia/15058_Beach%20of%20Santa%20Cristina> rdf:type owl:NamedIndividual ,
@@ -1116,8 +977,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398093
-<https://www.wikidata.org/entity/Q12398093> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15068_Ermida
 <http://example.org/resource/praia/15068_Ermida> rdf:type owl:NamedIndividual ,
@@ -1133,8 +992,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122017
-<https://www.wikidata.org/entity/Q28122017> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15068_Osmo
 <http://example.org/resource/praia/15068_Osmo> rdf:type owl:NamedIndividual ,
@@ -1150,8 +1007,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122016
-<https://www.wikidata.org/entity/Q28122016> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15068_Balar%C3%A9s
 <http://example.org/resource/praia/15068_Balar%C3%A9s> rdf:type owl:NamedIndividual ,
@@ -1167,8 +1022,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122018
-<https://www.wikidata.org/entity/Q28122018> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15113_Maior%20de%20Malpica
 <http://example.org/resource/praia/15113_Maior%20de%20Malpica> rdf:type owl:NamedIndividual ,
@@ -1184,8 +1037,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121685
-<https://www.wikidata.org/entity/Q28121685> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15117_Laxe
 <http://example.org/resource/praia/15117_Laxe> rdf:type owl:NamedIndividual ,
@@ -1201,8 +1052,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121874
-<https://www.wikidata.org/entity/Q28121874> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15143_Suevos
 <http://example.org/resource/praia/15143_Suevos> rdf:type owl:NamedIndividual ,
@@ -1218,8 +1067,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121617
-<https://www.wikidata.org/entity/Q28121617> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15250_San%20Francisco
 <http://example.org/resource/praia/15250_San%20Francisco> rdf:type owl:NamedIndividual ,
@@ -1235,8 +1082,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121907
-<https://www.wikidata.org/entity/Q28121907> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15320_As%20Pontes%20Lake
 <http://example.org/resource/praia/15320_As%20Pontes%20Lake> rdf:type owl:NamedIndividual ,
@@ -1252,8 +1097,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q4802948
-<https://www.wikidata.org/entity/Q4802948> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15406_Caranza
 <http://example.org/resource/praia/15406_Caranza> rdf:type owl:NamedIndividual ,
@@ -1269,8 +1112,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121455
-<https://www.wikidata.org/entity/Q28121455> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15630_Fariones%20Playa
 <http://example.org/resource/praia/15630_Fariones%20Playa> rdf:type owl:NamedIndividual ,
@@ -1286,8 +1127,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24023700
-<https://www.wikidata.org/entity/Q24023700> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15630_Peque%C3%B1a%20de%20Mi%C3%B1o
 <http://example.org/resource/praia/15630_Peque%C3%B1a%20de%20Mi%C3%B1o> rdf:type owl:NamedIndividual ,
@@ -1303,8 +1142,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121898
-<https://www.wikidata.org/entity/Q28121898> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/15940_Lombi%C3%B1a
 <http://example.org/resource/praia/15940_Lombi%C3%B1a> rdf:type owl:NamedIndividual ,
@@ -1320,8 +1157,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121679
-<https://www.wikidata.org/entity/Q28121679> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27005_San%20Pedro
 <http://example.org/resource/praia/27005_San%20Pedro> rdf:type owl:NamedIndividual ,
@@ -1337,8 +1172,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122190
-<https://www.wikidata.org/entity/Q28122190> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27013_O%20Torno
 <http://example.org/resource/praia/27013_O%20Torno> rdf:type owl:NamedIndividual ,
@@ -1354,8 +1187,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122231
-<https://www.wikidata.org/entity/Q28122231> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27019_Areoura
 <http://example.org/resource/praia/27019_Areoura> rdf:type owl:NamedIndividual ,
@@ -1371,8 +1202,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122216
-<https://www.wikidata.org/entity/Q28122216> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27019_Llas
 <http://example.org/resource/praia/27019_Llas> rdf:type owl:NamedIndividual ,
@@ -1388,8 +1217,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q9060688
-<https://www.wikidata.org/entity/Q9060688> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27019_A%20Rapadoira
 <http://example.org/resource/praia/27019_A%20Rapadoira> rdf:type owl:NamedIndividual ,
@@ -1405,8 +1232,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122198
-<https://www.wikidata.org/entity/Q28122198> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27019_Area%20da%20Fame
 <http://example.org/resource/praia/27019_Area%20da%20Fame> rdf:type owl:NamedIndividual ,
@@ -1422,8 +1247,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122206
-<https://www.wikidata.org/entity/Q28122206> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27019_Peiz%C3%A1s
 <http://example.org/resource/praia/27019_Peiz%C3%A1s> rdf:type owl:NamedIndividual ,
@@ -1439,8 +1262,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122200
-<https://www.wikidata.org/entity/Q28122200> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27025_Beach%20of%20Esteiro%2C%20Xuances
 <http://example.org/resource/praia/27025_Beach%20of%20Esteiro%2C%20Xuances> rdf:type owl:NamedIndividual ,
@@ -1456,8 +1277,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122238
-<https://www.wikidata.org/entity/Q28122238> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27051_As%20Catedrais%20beach
 <http://example.org/resource/praia/27051_As%20Catedrais%20beach> rdf:type owl:NamedIndividual ,
@@ -1471,8 +1290,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q2561808
-<https://www.wikidata.org/entity/Q2561808> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27051_Os%20Castros
 <http://example.org/resource/praia/27051_Os%20Castros> rdf:type owl:NamedIndividual ,
@@ -1488,8 +1305,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122005
-<https://www.wikidata.org/entity/Q28122005> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27064_Abrela
 <http://example.org/resource/praia/27064_Abrela> rdf:type owl:NamedIndividual ,
@@ -1505,8 +1320,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122144
-<https://www.wikidata.org/entity/Q28122144> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27064_Xilloi
 <http://example.org/resource/praia/27064_Xilloi> rdf:type owl:NamedIndividual ,
@@ -1522,8 +1335,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122158
-<https://www.wikidata.org/entity/Q28122158> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27066_Beach%20of%20Area
 <http://example.org/resource/praia/27066_Beach%20of%20Area> rdf:type owl:NamedIndividual ,
@@ -1539,8 +1350,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078571
-<https://www.wikidata.org/entity/Q6078571> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27792_Fontela
 <http://example.org/resource/praia/27792_Fontela> rdf:type owl:NamedIndividual ,
@@ -1556,8 +1365,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122189
-<https://www.wikidata.org/entity/Q28122189> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27902_Marosa
 <http://example.org/resource/praia/27902_Marosa> rdf:type owl:NamedIndividual ,
@@ -1573,8 +1380,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122225
-<https://www.wikidata.org/entity/Q28122225> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/27902_Portelo
 <http://example.org/resource/praia/27902_Portelo> rdf:type owl:NamedIndividual ,
@@ -1590,8 +1395,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119618
-<https://www.wikidata.org/entity/Q28119618> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36004_Lagos
 <http://example.org/resource/praia/36004_Lagos> rdf:type owl:NamedIndividual ,
@@ -1607,8 +1410,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119956
-<https://www.wikidata.org/entity/Q28119956> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36004_Portomaior
 <http://example.org/resource/praia/36004_Portomaior> rdf:type owl:NamedIndividual ,
@@ -1624,8 +1425,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119828
-<https://www.wikidata.org/entity/Q28119828> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36004_Area%20de%20Bon
 <http://example.org/resource/praia/36004_Area%20de%20Bon> rdf:type owl:NamedIndividual ,
@@ -1641,8 +1440,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119957
-<https://www.wikidata.org/entity/Q28119957> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36004_Lapam%C3%A1n%20Beach
 <http://example.org/resource/praia/36004_Lapam%C3%A1n%20Beach> rdf:type owl:NamedIndividual ,
@@ -1658,8 +1455,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q9060675
-<https://www.wikidata.org/entity/Q9060675> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36023_Area%20Grande
 <http://example.org/resource/praia/36023_Area%20Grande> rdf:type owl:NamedIndividual ,
@@ -1675,8 +1470,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28120073
-<https://www.wikidata.org/entity/Q28120073> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36023_O%20Mu%C3%AD%C3%B1o
 <http://example.org/resource/praia/36023_O%20Mu%C3%AD%C3%B1o> rdf:type owl:NamedIndividual ,
@@ -1692,8 +1485,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28120087
-<https://www.wikidata.org/entity/Q28120087> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36026_Mogor
 <http://example.org/resource/praia/36026_Mogor> rdf:type owl:NamedIndividual ,
@@ -1709,8 +1500,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119933
-<https://www.wikidata.org/entity/Q28119933> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36026_A%20Covi%C3%B1a
 <http://example.org/resource/praia/36026_A%20Covi%C3%B1a> rdf:type owl:NamedIndividual ,
@@ -1726,8 +1515,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28116185
-<https://www.wikidata.org/entity/Q28116185> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36026_Aguete%20Beach
 <http://example.org/resource/praia/36026_Aguete%20Beach> rdf:type owl:NamedIndividual ,
@@ -1743,8 +1530,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119934
-<https://www.wikidata.org/entity/Q28119934> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36026_Portocelo%20Beach
 <http://example.org/resource/praia/36026_Portocelo%20Beach> rdf:type owl:NamedIndividual ,
@@ -1760,8 +1545,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119932
-<https://www.wikidata.org/entity/Q28119932> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36029_O%20Con
 <http://example.org/resource/praia/36029_O%20Con> rdf:type owl:NamedIndividual ,
@@ -1777,8 +1560,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122317
-<https://www.wikidata.org/entity/Q28122317> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36041_Cabeceira%20Beach
 <http://example.org/resource/praia/36041_Cabeceira%20Beach> rdf:type owl:NamedIndividual ,
@@ -1794,8 +1575,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119930
-<https://www.wikidata.org/entity/Q28119930> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36043_Ponte%20Caldelas
 <http://example.org/resource/praia/36043_Ponte%20Caldelas> rdf:type owl:NamedIndividual ,
@@ -1808,8 +1587,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12397853
-<https://www.wikidata.org/entity/Q12397853> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Agra
 <http://example.org/resource/praia/36051_Agra> rdf:type owl:NamedIndividual ,
@@ -1825,8 +1602,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119911
-<https://www.wikidata.org/entity/Q28119911> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Bascuas
 <http://example.org/resource/praia/36051_Bascuas> rdf:type owl:NamedIndividual ,
@@ -1842,8 +1617,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078602
-<https://www.wikidata.org/entity/Q6078602> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Canelas
 <http://example.org/resource/praia/36051_Canelas> rdf:type owl:NamedIndividual ,
@@ -1859,8 +1632,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119873
-<https://www.wikidata.org/entity/Q28119873> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Foxos
 <http://example.org/resource/praia/36051_Foxos> rdf:type owl:NamedIndividual ,
@@ -1876,8 +1647,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119890
-<https://www.wikidata.org/entity/Q28119890> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Lapa
 <http://example.org/resource/praia/36051_Lapa> rdf:type owl:NamedIndividual ,
@@ -1893,8 +1662,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119886
-<https://www.wikidata.org/entity/Q28119886> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Major
 <http://example.org/resource/praia/36051_Major> rdf:type owl:NamedIndividual ,
@@ -1910,8 +1677,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119893
-<https://www.wikidata.org/entity/Q28119893> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Portonovo
 <http://example.org/resource/praia/36051_Portonovo> rdf:type owl:NamedIndividual ,
@@ -1927,8 +1692,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078596
-<https://www.wikidata.org/entity/Q6078596> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Pragueira
 <http://example.org/resource/praia/36051_Pragueira> rdf:type owl:NamedIndividual ,
@@ -1944,8 +1707,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119894
-<https://www.wikidata.org/entity/Q28119894> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Q6078544
 <http://example.org/resource/praia/36051_Q6078544> rdf:type owl:NamedIndividual ,
@@ -1961,8 +1722,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078544
-<https://www.wikidata.org/entity/Q6078544> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_A%20Lanzada
 <http://example.org/resource/praia/36051_A%20Lanzada> rdf:type owl:NamedIndividual ,
@@ -1978,8 +1737,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20548158
-<https://www.wikidata.org/entity/Q20548158> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Areas%20Beach
 <http://example.org/resource/praia/36051_Areas%20Beach> rdf:type owl:NamedIndividual ,
@@ -1995,8 +1752,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078573
-<https://www.wikidata.org/entity/Q6078573> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Areas%20Gordas
 <http://example.org/resource/praia/36051_Areas%20Gordas> rdf:type owl:NamedIndividual ,
@@ -2012,8 +1767,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24023257
-<https://www.wikidata.org/entity/Q24023257> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Beach%20of%20A%20Lanzada
 <http://example.org/resource/praia/36051_Beach%20of%20A%20Lanzada> rdf:type owl:NamedIndividual ,
@@ -2029,8 +1782,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q3398218
-<https://www.wikidata.org/entity/Q3398218> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Caneli%C3%B1as
 <http://example.org/resource/praia/36051_Caneli%C3%B1as> rdf:type owl:NamedIndividual ,
@@ -2046,8 +1797,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398075
-<https://www.wikidata.org/entity/Q12398075> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Montalvo%20Beach
 <http://example.org/resource/praia/36051_Montalvo%20Beach> rdf:type owl:NamedIndividual ,
@@ -2063,8 +1812,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078910
-<https://www.wikidata.org/entity/Q6078910> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Paxari%C3%B1as
 <http://example.org/resource/praia/36051_Paxari%C3%B1as> rdf:type owl:NamedIndividual ,
@@ -2080,8 +1827,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398088
-<https://www.wikidata.org/entity/Q12398088> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36051_Playa%20del%20Silgar
 <http://example.org/resource/praia/36051_Playa%20del%20Silgar> rdf:type owl:NamedIndividual ,
@@ -2097,8 +1842,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24019722
-<https://www.wikidata.org/entity/Q24019722> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Bouzas
 <http://example.org/resource/praia/36057_Bouzas> rdf:type owl:NamedIndividual ,
@@ -2114,8 +1857,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119383
-<https://www.wikidata.org/entity/Q28119383> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Q28120018
 <http://example.org/resource/praia/36057_Q28120018> rdf:type owl:NamedIndividual ,
@@ -2131,8 +1872,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28120018
-<https://www.wikidata.org/entity/Q28120018> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Q65897252
 <http://example.org/resource/praia/36057_Q65897252> rdf:type owl:NamedIndividual ,
@@ -2147,8 +1886,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q65897252
-<https://www.wikidata.org/entity/Q65897252> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Q66547532
 <http://example.org/resource/praia/36057_Q66547532> rdf:type owl:NamedIndividual ,
@@ -2164,8 +1901,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q66547532
-<https://www.wikidata.org/entity/Q66547532> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Arei%C3%B1o
 <http://example.org/resource/praia/36057_Arei%C3%B1o> rdf:type owl:NamedIndividual ,
@@ -2181,8 +1916,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24003844
-<https://www.wikidata.org/entity/Q24003844> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Beach%20of%20Vao
 <http://example.org/resource/praia/36057_Beach%20of%20Vao> rdf:type owl:NamedIndividual ,
@@ -2198,8 +1931,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6448405
-<https://www.wikidata.org/entity/Q6448405> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_De%20Argazada
 <http://example.org/resource/praia/36057_De%20Argazada> rdf:type owl:NamedIndividual ,
@@ -2215,8 +1946,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119389
-<https://www.wikidata.org/entity/Q28119389> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Os%20Mui%C3%B1os
 <http://example.org/resource/praia/36057_Os%20Mui%C3%B1os> rdf:type owl:NamedIndividual ,
@@ -2232,8 +1961,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q23994789
-<https://www.wikidata.org/entity/Q23994789> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Playa%20de%20Rodas
 <http://example.org/resource/praia/36057_Playa%20de%20Rodas> rdf:type owl:NamedIndividual ,
@@ -2249,8 +1976,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q23993081
-<https://www.wikidata.org/entity/Q23993081> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Praia%20Canido
 <http://example.org/resource/praia/36057_Praia%20Canido> rdf:type owl:NamedIndividual ,
@@ -2266,8 +1991,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q24003868
-<https://www.wikidata.org/entity/Q24003868> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36057_Praia%20de%20Carril
 <http://example.org/resource/praia/36057_Praia%20de%20Carril> rdf:type owl:NamedIndividual ,
@@ -2283,8 +2006,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q6078653
-<https://www.wikidata.org/entity/Q6078653> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36060_Bamio
 <http://example.org/resource/praia/36060_Bamio> rdf:type owl:NamedIndividual ,
@@ -2300,8 +2021,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28122324
-<https://www.wikidata.org/entity/Q28122324> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36060_Compostela
 <http://example.org/resource/praia/36060_Compostela> rdf:type owl:NamedIndividual ,
@@ -2317,8 +2036,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q9060660
-<https://www.wikidata.org/entity/Q9060660> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36226_Mende
 <http://example.org/resource/praia/36226_Mende> rdf:type owl:NamedIndividual ,
@@ -2334,8 +2051,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119361
-<https://www.wikidata.org/entity/Q28119361> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36300_Barbeira
 <http://example.org/resource/praia/36300_Barbeira> rdf:type owl:NamedIndividual ,
@@ -2351,8 +2066,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20543479
-<https://www.wikidata.org/entity/Q20543479> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36300_Concheira
 <http://example.org/resource/praia/36300_Concheira> rdf:type owl:NamedIndividual ,
@@ -2368,8 +2081,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20543488
-<https://www.wikidata.org/entity/Q20543488> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36300_Os%20Frades
 <http://example.org/resource/praia/36300_Os%20Frades> rdf:type owl:NamedIndividual ,
@@ -2385,8 +2096,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20543521
-<https://www.wikidata.org/entity/Q20543521> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36300_Peque%C3%B1a%20de%20Mi%C3%B1o
 <http://example.org/resource/praia/36300_Peque%C3%B1a%20de%20Mi%C3%B1o> rdf:type owl:NamedIndividual ,
@@ -2402,8 +2111,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28121898
-<https://www.wikidata.org/entity/Q28121898> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36308_Playa%20Marta
 <http://example.org/resource/praia/36308_Playa%20Marta> rdf:type owl:NamedIndividual ,
@@ -2419,8 +2126,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20543497
-<https://www.wikidata.org/entity/Q20543497> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36393_Praia%20Ladeira
 <http://example.org/resource/praia/36393_Praia%20Ladeira> rdf:type owl:NamedIndividual ,
@@ -2436,8 +2141,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q20543532
-<https://www.wikidata.org/entity/Q20543532> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36901_Camaxe
 <http://example.org/resource/praia/36901_Camaxe> rdf:type owl:NamedIndividual ,
@@ -2452,8 +2155,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119833
-<https://www.wikidata.org/entity/Q28119833> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36901_Area%20da%20Secada
 <http://example.org/resource/praia/36901_Area%20da%20Secada> rdf:type owl:NamedIndividual ,
@@ -2469,8 +2170,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q12398070
-<https://www.wikidata.org/entity/Q12398070> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/praia/36992_Xiorto
 <http://example.org/resource/praia/36992_Xiorto> rdf:type owl:NamedIndividual ,
@@ -2486,8 +2185,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q28119914
-<https://www.wikidata.org/entity/Q28119914> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/provincia/15
 <http://example.org/resource/provincia/15> rdf:type owl:NamedIndividual ,
@@ -2498,8 +2195,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q82119
-<https://www.wikidata.org/entity/Q82119> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/provincia/27
 <http://example.org/resource/provincia/27> rdf:type owl:NamedIndividual ,
@@ -2510,8 +2205,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q95027
-<https://www.wikidata.org/entity/Q95027> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/provincia/36
 <http://example.org/resource/provincia/36> rdf:type owl:NamedIndividual ,
@@ -2522,8 +2215,6 @@
 
 
 ###  https://www.wikidata.org/entity/Q95086
-<https://www.wikidata.org/entity/Q95086> rdf:type owl:NamedIndividual .
-
 
 ###  http://example.org/resource/ubicacion/41.876444_-8.862944
 <http://example.org/resource/ubicacion/41.876444_-8.862944> rdf:type owl:NamedIndividual ,

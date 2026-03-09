@@ -12,8 +12,9 @@
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV
+ rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" 
+ rml:referenceFormulation ql:CSV;
+ rml:separator ";"
 ];
 
 rr:subjectMap [
@@ -74,8 +75,9 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV
+ rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" 
+ rml:referenceFormulation ql:CSV;
+ rml:separator ";"
 ];
 
 rr:subjectMap [
@@ -112,8 +114,9 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV
+rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" 
+ rml:referenceFormulation ql:CSV;
+ rml:separator ";"
 ];
 
 rr:subjectMap [
@@ -149,8 +152,9 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV
+ rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" 
+ rml:referenceFormulation ql:CSV;
+ rml:separator ";"
 ];
 
 rr:subjectMap [

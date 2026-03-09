@@ -6,6 +6,7 @@
 @prefix : <http://example.org/def/gamere#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
 #################################################
 # PRAIA
 #################################################
@@ -14,9 +15,8 @@
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV;
- rml:separator ";"
+ rml:source "data/PraiasBandeiraAzul-2025-csv.csv" ;
+ rml:referenceFormulation ql:CSV
 ];
 
 rr:subjectMap [
@@ -77,9 +77,8 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV;
- rml:separator ";"
+ rml:source "data/PraiasBandeiraAzul-2025-csv.csv" ;
+ rml:referenceFormulation ql:CSV
 ];
 
 rr:subjectMap [
@@ -116,9 +115,8 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
-rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV;
- rml:separator ";"
+rml:source "data/PraiasBandeiraAzul-2025-csv.csv" ;
+ rml:referenceFormulation ql:CSV
 ];
 
 rr:subjectMap [
@@ -154,9 +152,8 @@ rr:predicateObjectMap [
 a rr:TriplesMap ;
 
 rml:logicalSource [
- rml:source "../data/PraiasBandeiraAzul-2025-csv.csv" ;
- rml:referenceFormulation ql:CSV;
- rml:separator ";"
+ rml:source "data/PraiasBandeiraAzul-2025-csv.csv" ;
+ rml:referenceFormulation ql:CSV
 ];
 
 rr:subjectMap [

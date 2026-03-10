@@ -1,0 +1,28 @@
+prefixes:
+  gamere: "http://example.org/def/gamere#"
+  res: "http://example.org/resource/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+mappings:
+  playas:
+    sources:
+      - ['data/PraiasBandeiraAzul-2025-csv.csv~csv']
+    s: res:praia/$(ID_CONCELLO)_$(NOME)
+    po:
+      - [a, gamere:Praia]
+      - [gamere:nomePraia, $(NOME)]
+      - [gamere:lonxitude, $(LONXITUDE), xsd:integer]
+      - [gamere:entorno, $(ENTORNO)]
+      - [gamere:url, $(URL_TURISMO), xsd:anyURI]
+      - p: gamere:situadaEn
+        o: res:concello/$(ID_CONCELLO)
+      - p: gamere:estaEn
+        o: res:ubicacion/$(LATITUDE)_$(LONGITUDE)
+
+  concellos:
+    sources:
+      - ['data/PraiasBandeiraAzul-2025-csv.csv~csv']
+    s: res:concello/$(ID_CONCELLO)
+    po:
+      - [a, gamere:Concello]
+      - [gamere:codigoConcello, $(ID_CONCELLO), xsd:integer]

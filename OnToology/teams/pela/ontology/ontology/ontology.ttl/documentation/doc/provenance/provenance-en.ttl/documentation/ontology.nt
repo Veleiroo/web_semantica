@@ -41,17 +41,17 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
-# file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://xmlns.com/foaf/0.1/name> "Santiago Pereira Olmeda, Mateo Fraguas Abal, Gonzalo Landeira Rodríguez" .
+# file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> <http://xmlns.com/foaf/0.1/name> "Santiago Pereira Olmeda, Mateo Fraguas Abal, Gonzalo Landeira Rodríguez" .
 # 
-# file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://purl.org/dc/terms/title> "Ontología Deportes" .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.essepuntato.it/lode/> .
-<file:/home/ahmad/repos/diana.rozados@rai.usc.es/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <https://github.com/dgarijo/Widoco/> .
+# file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://purl.org/dc/terms/title> "Ontología Deportes" .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/provenance-en.ttlagent0> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.essepuntato.it/lode/> .
+<file:/home/ahmad/repos/pabloperezrodriguezzzz@gmail.com/teams/pela/ontology/ontology/ontology.ttl/documentation/doc/provenance/..%5Cindex-en.html> <http://www.w3.org/ns/prov#wasAttributedTo> <https://github.com/dgarijo/Widoco/> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -24,16 +24,6 @@ A partir del Knowledge Graph construido en la tarea anterior, de vuestra ontolog
 
 Debéis entregar en vuestra carpeta del repositorio una estructura similar a esta:
 
-- data/
-	- \*.csv
-- mappings/
-	- mapping.yarrrml.yaml
-	- mapping.rml.ttl
-	- config.ini
-- ontology/
-	- ontology.ttl
-- kg/
-	- output.ttl
 - shapes/
 	- shapes_from_data.ttl
 	- shapes_from_ontology_or_mappings.ttl

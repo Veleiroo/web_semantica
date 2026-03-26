@@ -7,7 +7,7 @@ mappings:
 
   ESPAZO:
     sources:
-      - ['data/teatros-auditorios.csv~csv']
+      - ['../data cleaning/teatros-auditorios.csv~csv']
     s: ex:espazo/$(ESPAZO)
     po:
       - [a, ta:Espazo]
@@ -27,12 +27,16 @@ mappings:
 
   ENDEREZO:
     sources:
-      - ['data/teatros-auditorios.csv~csv']
+      - ['../data cleaning/teatros-auditorios.csv~csv']
     s: ex:enderezo/$(ESPAZO)
     po:
       - [a, ta:Enderezo]
       - [ta:calle, $(ENDEREZO)]
       - [ta:numero, $(NUMERO)]
+      - p: ta:CP
+        o:
+          value: $(CÓDIGO POSTAL)
+          datatype: xsd:integer
       - p: ta:latitud
         o:
           value: $(LATITUD)
@@ -48,7 +52,7 @@ mappings:
 
   DATOCONTACTO:
     sources:
-      - ['data/teatros-auditorios.csv~csv']
+      - ['../data cleaning/teatros-auditorios.csv~csv']
     s: ex:contacto/$(ESPAZO)
     po:
       - [a, ta:DatoContacto]
@@ -58,15 +62,11 @@ mappings:
 
   CONCELLO:
     sources:
-      - ['data/teatros-auditorios.csv~csv']
+      - ['../data cleaning/teatros-auditorios.csv~csv']
     s: ex:concello/$(CONCELLO)
     po:
       - [a, ta:Concello]
       - [ta:nombre, $(CONCELLO)]
-      - p: ta:CP
-        o:
-          value: $(CÓDIGO POSTAL)
-          datatype: xsd:integer
       - p: ta:ubicadoen
         o:
           value: ex:provincia/$(PROVINCIA)
@@ -74,7 +74,7 @@ mappings:
 
   PROVINCIA:
     sources:
-      - ['data/teatros-auditorios.csv~csv']
+      - ['../data cleaning/teatros-auditorios.csv~csv']
     s: ex:provincia/$(PROVINCIA)
     po:
       - [a, ta:Provincia]

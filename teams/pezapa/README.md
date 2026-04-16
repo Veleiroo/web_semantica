@@ -34,6 +34,7 @@ mappings/
   mapping.rml.ttl
   config.ini
 kg/
+  output.nt
   output.ttl
 shapes/
   shapes_from_data.ttl
@@ -171,6 +172,8 @@ Las decisiones de modelado mas importantes fueron:
 - separar la informacion del espacio, su direccion y su contacto en recursos distintos
 - tipar `AFORAMENTO` y `CÓDIGO POSTAL` como enteros y `LATITUD` y `LONGUITUD` como decimales
 - enlazar ayuntamientos y provincias mediante URIs propias construidas desde el CSV
+- materializar `owl:sameAs` para `Concello` y `Provincia` a partir de `URL_CONCELLO` y `URL_PROVINCIA`
+- normalizar las URLs reconciliadas `https://www.wikidata.org/wiki/Q...` a IRIs de entidad `http://www.wikidata.org/entity/Q...` mediante `grel:string_replace`
 
 ### Comandos de trabajo
 
@@ -181,15 +184,18 @@ yatter -i mappings/mappings.yarrrm.yaml -o mappings/mapping.rml.ttl
 python3 -m morph_kgc mappings/config.ini
 ```
 
+Como `Morph-KGC` en este entorno materializa a `N-TRIPLES`, el grafo principal del equipo se conserva ademas en Turtle como `kg/output.ttl` tras reserializar `kg/output.nt`.
+
 ### Resultado del KG
 
-El Knowledge Graph conservado en `kg/output.ttl` contiene `840` triples y materializa:
+El Knowledge Graph reconstruido desde los mappings contiene `884` triples y materializa:
 
 - `44` recursos `ta:Espazo`
 - `44` recursos `ta:Enderezo`
 - `44` recursos `ta:DatoContacto`
 - `40` recursos `ta:Concello`
 - `4` recursos `ta:Provincia`
+- `44` enlaces `owl:sameAs` a Wikidata para municipios y provincias
 
 El CSV limpio tiene `46` filas, pero el KG solo contiene `44` espacios porque hay nombres duplicados que generan colisiones de URI al usar `ESPAZO` como identificador:
 
@@ -200,7 +206,7 @@ En ambos casos, filas de municipios distintos acaban fusionadas en un mismo recu
 
 ### Observacion sobre la salida
 
-El fichero `mappings/config.ini` apunta a una salida en N-Triples, mientras que el grafo que se conserva en la carpeta esta serializado en Turtle como `kg/output.ttl`.
+El fichero `mappings/config.ini` genera `kg/output.nt`, porque es uno de los formatos soportados por `Morph-KGC`. A partir de esa salida, el equipo conserva tambien `kg/output.ttl`, que es el fichero que consumen los scripts de validacion y el resto de artefactos de la practica.
 
 ## Tarea 5 - Validacion del Knowledge Graph
 
@@ -280,6 +286,7 @@ Interpretacion:
 - predominan violaciones de `sh:maxCount`
 - los recursos mas conflictivos son `Auditorio Rocio Jurado` y `Teatro Principal`
 - aparecen multiples valores donde el modelo esperado es unico: `aforamiento`, `calle`, `CP`, `latitud`, `longitud`, `telefono`, `email`, `web` y `pertenece`
+- los `owl:sameAs` materializados desde el mapping no introducen errores nuevos en esta validacion, porque el problema dominante sigue siendo la fusion de recursos por URI
 
 #### Validacion con shapes del modelo
 
@@ -292,6 +299,7 @@ Interpretacion:
 - se mantienen las colisiones de URI detectadas con las shapes inferidas desde datos
 - se anaden muchas violaciones de datatype en `ta:telefono`
 - la ontologia define `ta:telefono` con rango `xsd:integer`, pero el KG contiene literales como `"981 716 001"` o `"986 304 108"`
+- los nuevos enlaces `owl:sameAs` no cambian el numero de violaciones, porque las shapes del modelo no imponen restricciones sobre esa propiedad adicional
 
 ## Problemas detectados y decisiones de diseno
 
@@ -312,6 +320,10 @@ La ontologia modela `ta:telefono` como `xsd:integer`, mientras que el CSV limpio
 
 Municipios y provincias quedaron completamente enlazados, pero la reconciliacion de espacios fue parcial (`12/46`). Esto no impide construir el KG, pero limita la interlinking externa del recurso principal.
 
+### 4. Enlaces a Wikidata desde el mapping
+
+La version final del KG ya no depende de un enriquecimiento posterior para enlazar con Wikidata. Los `owl:sameAs` de `Concello` y `Provincia` se generan directamente desde el mapping RML, lo que deja el flujo de construccion coherente con la tarea 4 y facilita la explotacion posterior del grafo.
+
 ## Conclusiones
 
 El proyecto cubre el flujo completo de LOT4KG para este caso de uso:
@@ -320,6 +332,7 @@ El proyecto cubre el flujo completo de LOT4KG para este caso de uso:
 - limpieza y enriquecimiento del dataset con OpenRefine
 - modelado de una ontologia propia
 - definicion de mappings YARRRML/RML y materializacion del KG
+- interlinking directo con Wikidata desde los propios mappings
 - validacion SHACL desde datos y desde modelo
 
 La validacion final fue especialmente util para detectar dos problemas reales del proyecto:

@@ -894,6 +894,9 @@ def render_selected_center_card(center: pd.Series) -> None:
         if isinstance(url, str) and url.strip():
             links.append(build_link_pill(url.strip(), label=label, css_class="selected-center-link"))
 
+    empty_links_html = '<span class="compact-note">Sin enlaces disponibles para este punto.</span>'
+    links_html = "".join(links) if links else empty_links_html
+
     st.markdown(
         (
             '<div class="selected-center-card">'
@@ -901,7 +904,7 @@ def render_selected_center_card(center: pd.Series) -> None:
             f'<div class="selected-center-title">{html.escape(format_cell(center.get("espazo")) or "Centro cultural")}</div>'
             f'<div class="selected-center-subtitle">{html.escape(format_cell(center.get("concello")))} · {html.escape(format_cell(center.get("provincia_ui")))}</div>'
             f'<div class="selected-center-grid">{detail_html}</div>'
-            f'<div class="selected-center-links">{"".join(links) if links else "<span class=\"compact-note\">Sin enlaces disponibles para este punto.</span>"}</div>'
+            f'<div class="selected-center-links">{links_html}</div>'
             "</div>"
         ),
         unsafe_allow_html=True,

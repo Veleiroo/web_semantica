@@ -698,75 +698,101 @@ def extract_selected_point_id(selection_state: object) -> int | None:
         return None
 
 
+# ---------------------------------------------------------------------------
+# MAP — Scattermapbox with real Carto tiles (no Mapbox token needed)
+# ---------------------------------------------------------------------------
+
+_MAPBOX_STYLES = {
+    "dark": "carto-darkmatter",
+    "light": "carto-positron",
+}
+
+
 def build_map_figure(
     points: pd.DataFrame,
     map_style: str,
     size_mode: str,
     selected_point_id: int | None = None,
 ) -> go.Figure:
+    """Return a Plotly figure using Scattermapbox so real map tiles are shown."""
     points = build_map_dataframe(points)
     if points.empty:
         return go.Figure()
 
     marker_sizes = scale_marker_sizes(points, size_mode)
-    dark_mode = map_style != "light"
+    mapbox_style = _MAPBOX_STYLES.get(map_style, "carto-darkmatter")
+
+    # Build customdata matrix with all columns needed for hover
+    customdata_cols = points[
+        ["point_id", "concello", "provincia_ui", "aforamento_label", "telefono_display", "web_display"]
+    ].to_numpy()
 
     figure = go.Figure()
+
+    # Main scatter trace
     figure.add_trace(
-        go.Scattergeo(
+        go.Scattermapbox(
             lat=points["latitud"],
             lon=points["longitud"],
             mode="markers",
-            customdata=points[["point_id"]].to_numpy(),
-            showlegend=False,
-            marker=go.scattergeo.Marker(
+            customdata=customdata_cols,
+            marker=go.scattermapbox.Marker(
                 size=marker_sizes,
                 color=points["marker_hex"],
-                opacity=0.88,
-                line={"width": 1, "color": "#16304d"},
+                opacity=0.90,
             ),
             hovertemplate=(
                 "<b>%{text}</b><br>"
                 "Concello: %{customdata[1]}<br>"
                 "Provincia: %{customdata[2]}<br>"
                 "Aforo: %{customdata[3]}<br>"
-                "Telefono: %{customdata[4]}<br>"
+                "Teléfono: %{customdata[4]}<br>"
                 "Web: %{customdata[5]}<extra></extra>"
             ),
             text=points["espazo"],
-            meta=points["point_id"],
+            showlegend=False,
         )
     )
 
-    figure.data[0].customdata = points.loc[
-        :,
-        [
-            "point_id",
-            "concello",
-            "provincia_ui",
-            "aforamento_label",
-            "telefono_display",
-            "web_display",
-        ],
-    ].to_numpy()
-
+    # Selection ring overlay
     selected_row = points[points["point_id"] == selected_point_id]
     if not selected_row.empty:
-        selected_size = scale_marker_sizes(selected_row, size_mode).iloc[0] + 8
+        sel_size = float(scale_marker_sizes(selected_row, size_mode).iloc[0]) + 10
         figure.add_trace(
-            go.Scattergeo(
+            go.Scattermapbox(
                 lat=selected_row["latitud"],
                 lon=selected_row["longitud"],
                 mode="markers",
-                marker=go.scattergeo.Marker(
-                    size=selected_size,
-                    color="rgba(255,255,255,0.08)",
-                    line={"width": 3, "color": "#f5f8ff"},
+                marker=go.scattermapbox.Marker(
+                    size=sel_size,
+                    color="rgba(255,255,255,0.0)",
+                    opacity=1.0,
+                    allowoverlap=True,
                 ),
                 hoverinfo="skip",
                 showlegend=False,
             )
         )
+        # White ring via a second trace with larger outline circle
+        figure.add_trace(
+            go.Scattermapbox(
+                lat=selected_row["latitud"],
+                lon=selected_row["longitud"],
+                mode="markers",
+                marker=go.scattermapbox.Marker(
+                    size=sel_size + 6,
+                    color="rgba(255,255,255,0.0)",
+                    opacity=1.0,
+                    allowoverlap=True,
+                ),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+
+    # Compute center
+    center_lat = float(points["latitud"].mean())
+    center_lon = float(points["longitud"].mean())
 
     figure.update_layout(
         height=470,
@@ -774,20 +800,10 @@ def build_map_figure(
         paper_bgcolor="rgba(0,0,0,0)",
         clickmode="event+select",
         uirevision="centers-map",
-        geo=dict(
-            projection_type="mercator",
-            fitbounds="locations",
-            bgcolor="rgba(0,0,0,0)",
-            showland=True,
-            landcolor="#121c2d" if dark_mode else "#edf4fb",
-            showocean=True,
-            oceancolor="#09111d" if dark_mode else "#dbe8f5",
-            showlakes=True,
-            lakecolor="#09111d" if dark_mode else "#dbe8f5",
-            showcoastlines=True,
-            coastlinecolor="#314561" if dark_mode else "#8ea5c4",
-            showcountries=False,
-            showsubunits=False,
+        mapbox=dict(
+            style=mapbox_style,
+            center=dict(lat=center_lat, lon=center_lon),
+            zoom=7,
         ),
     )
 

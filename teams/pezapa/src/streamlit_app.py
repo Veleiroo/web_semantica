@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import html
 from pathlib import Path
+from urllib.parse import urlparse
 
 import pandas as pd
-import pydeck as pdk
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 
 
@@ -15,6 +17,7 @@ QUERIES_DIR = ROOT / "queries"
 README_PATH = ROOT / "README.md"
 KG_TRIPLES = 884
 OWL_SAMEAS = 44
+MAP_SELECTION_KEY = "centers_map_chart"
 
 PROVINCE_HEX = {
     "A Coruña": "#63a4ff",
@@ -133,7 +136,6 @@ def inject_styles() -> None:
           .stApp p,
           .stApp label,
           .stApp span,
-          .stApp div,
           .stApp h1,
           .stApp h2,
           .stApp h3 {
@@ -341,6 +343,7 @@ def inject_styles() -> None:
             font-weight: 600;
             border-bottom: 1px solid rgba(141, 183, 255, 0.08);
             box-shadow: 0 8px 18px rgba(2, 6, 12, 0.32);
+            white-space: nowrap;
           }
           .kg-table tbody td {
             position: relative;
@@ -349,6 +352,7 @@ def inject_styles() -> None:
             border-bottom: 1px solid rgba(141, 183, 255, 0.06);
             color: #edf3ff;
             vertical-align: top;
+            white-space: nowrap;
           }
           .kg-table tbody tr:nth-child(even) td {
             background: rgba(255, 255, 255, 0.015);
@@ -356,8 +360,121 @@ def inject_styles() -> None:
           .kg-table tbody tr:hover td {
             background: rgba(82, 214, 183, 0.07);
           }
+          .kg-table a,
+          .selected-center-links a {
+            color: #9fe7d8 !important;
+            text-decoration: none;
+          }
+          .kg-table a:hover,
+          .selected-center-links a:hover {
+            text-decoration: underline;
+          }
+          .kg-link-stack,
+          .selected-center-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+          }
+          .kg-link-pill,
+          .selected-center-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.32rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(82, 214, 183, 0.10);
+            border: 1px solid rgba(82, 214, 183, 0.16);
+            color: #dffaf3 !important;
+            line-height: 1.1;
+            font-size: 0.86rem;
+            max-width: 100%;
+          }
+          .selected-center-card {
+            background:
+              radial-gradient(circle at top right, rgba(99, 164, 255, 0.10), transparent 24%),
+              linear-gradient(180deg, rgba(17, 28, 45, 0.94), rgba(12, 20, 34, 0.96));
+            border: 1px solid rgba(141, 183, 255, 0.10);
+            border-radius: 20px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 18px 34px rgba(2, 6, 12, 0.22);
+          }
+          .selected-center-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.72rem;
+            color: #8ea5c4 !important;
+            margin-bottom: 0.45rem;
+          }
+          .selected-center-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+          }
+          .selected-center-subtitle {
+            color: #a9bdd9 !important;
+            margin-bottom: 1rem;
+          }
+          .selected-center-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+          }
+          .selected-center-item {
+            padding: 0.7rem 0.8rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(141, 183, 255, 0.08);
+            min-width: 0;
+            overflow: hidden;
+          }
+          .selected-center-label {
+            display: block;
+            font-size: 0.76rem;
+            color: #8ea5c4 !important;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+          }
+          .selected-center-value {
+            color: #edf3ff !important;
+            font-weight: 600;
+            min-width: 0;
+            overflow: hidden;
+          }
+          .selected-center-value .kg-link-pill,
+          .selected-center-value .selected-center-link {
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
           .stRadio > div {
             gap: 0.4rem;
+          }
+          @media (max-width: 980px) {
+            .block-container {
+              padding-top: 1.35rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
+            .hero-panel {
+              padding: 22px 20px 18px;
+              border-radius: 22px;
+            }
+            .hero-title {
+              font-size: 1.7rem;
+            }
+            div[data-baseweb="tab-list"] {
+              flex-wrap: wrap;
+            }
+            button[data-baseweb="tab"] {
+              flex: 1 1 calc(50% - 8px);
+              justify-content: center;
+            }
+            [data-testid="stPlotlyChart"] {
+              padding: 8px 8px 0 8px;
+            }
           }
         </style>
         """,
@@ -423,11 +540,14 @@ def load_centers() -> pd.DataFrame:
     dataframe = pd.read_csv(DATASET_PATH).rename(
         columns={
             "ESPAZO": "espazo",
+            "URL_ESPAZO": "wikidata_espazo",
             "ENDEREZO": "enderezo",
             "NUMERO": "numero",
             "CÓDIGO POSTAL": "codigo_postal",
             "CONCELLO": "concello",
+            "URL_CONCELLO": "wikidata_concello",
             "PROVINCIA": "provincia",
+            "URL_PROVINCIA": "wikidata_provincia",
             "TELÉFONO": "telefono",
             "E-MAIL": "email",
             "AFORAMENTO": "aforamento",
@@ -456,7 +576,11 @@ def load_centers() -> pd.DataFrame:
     dataframe["fill_color"] = dataframe["provincia_ui"].map(
         lambda name: PROVINCE_COLORS.get(name, [39, 92, 148, 190])
     )
+    dataframe["marker_hex"] = dataframe["provincia_ui"].map(
+        lambda name: PROVINCE_HEX.get(name, "#63a4ff")
+    )
     dataframe["constant_radius"] = 240
+    dataframe["point_id"] = range(len(dataframe))
     return dataframe
 
 
@@ -528,51 +652,146 @@ def build_map_dataframe(dataframe: pd.DataFrame) -> pd.DataFrame:
     return valid
 
 
-def build_map(points: pd.DataFrame, map_style: str, size_mode: str) -> pdk.Deck:
-    center_lat = float(points["latitud"].mean())
-    center_lon = float(points["longitud"].mean())
-    radius_column = "marker_radius" if size_mode == "Aforo" else "constant_radius"
+def scale_marker_sizes(points: pd.DataFrame, size_mode: str) -> pd.Series:
+    if size_mode != "Aforo":
+        return pd.Series([14.0] * len(points), index=points.index)
 
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=points,
-        get_position="[longitud, latitud]",
-        get_radius=radius_column,
-        get_fill_color="fill_color",
-        get_line_color=[29, 53, 87, 220],
-        line_width_min_pixels=1,
-        pickable=True,
-        stroked=True,
-        filled=True,
-        radius_min_pixels=6,
-        radius_max_pixels=24,
-    )
+    capacity = pd.to_numeric(points["aforamento"], errors="coerce")
+    fallback = capacity.dropna().median()
+    scaled = capacity.fillna(fallback if pd.notna(fallback) else 300).clip(lower=120, upper=900)
+    min_value = float(scaled.min())
+    max_value = float(scaled.max())
 
-    return pdk.Deck(
-        map_style=map_style,
-        initial_view_state=pdk.ViewState(
-            latitude=center_lat,
-            longitude=center_lon,
-            zoom=7,
-            pitch=0,
-        ),
-        layers=[layer],
-        tooltip={
-            "html": (
-                "<b>{espazo}</b><br/>"
-                "Concello: {concello}<br/>"
-                "Provincia: {provincia_ui}<br/>"
-                "Aforo: {aforamento_label}<br/>"
-                "Telefono: {telefono_display}<br/>"
-                "Web: {web_display}"
+    if abs(max_value - min_value) < 1e-9:
+        return pd.Series([18.0] * len(points), index=points.index)
+
+    return 12 + ((scaled - min_value) / (max_value - min_value)) * 14
+
+
+def extract_selected_point_id(selection_state: object) -> int | None:
+    if not selection_state:
+        return None
+
+    selection = getattr(selection_state, "selection", selection_state)
+    if not hasattr(selection, "get"):
+        return None
+
+    points = selection.get("points", [])
+    if not points:
+        return None
+
+    selected = points[-1]
+    customdata = selected.get("customdata") or []
+    if customdata:
+        try:
+            return int(customdata[0])
+        except (TypeError, ValueError):
+            return None
+
+    point_index = selected.get("point_index")
+    if point_index is None:
+        return None
+
+    try:
+        return int(point_index)
+    except (TypeError, ValueError):
+        return None
+
+
+def build_map_figure(
+    points: pd.DataFrame,
+    map_style: str,
+    size_mode: str,
+    selected_point_id: int | None = None,
+) -> go.Figure:
+    points = build_map_dataframe(points)
+    if points.empty:
+        return go.Figure()
+
+    marker_sizes = scale_marker_sizes(points, size_mode)
+    dark_mode = map_style != "light"
+
+    figure = go.Figure()
+    figure.add_trace(
+        go.Scattergeo(
+            lat=points["latitud"],
+            lon=points["longitud"],
+            mode="markers",
+            customdata=points[["point_id"]].to_numpy(),
+            showlegend=False,
+            marker=go.scattergeo.Marker(
+                size=marker_sizes,
+                color=points["marker_hex"],
+                opacity=0.88,
+                line={"width": 1, "color": "#16304d"},
             ),
-            "style": {
-                "backgroundColor": "#1d3557",
-                "color": "white",
-                "fontSize": "13px",
-            },
-        },
+            hovertemplate=(
+                "<b>%{text}</b><br>"
+                "Concello: %{customdata[1]}<br>"
+                "Provincia: %{customdata[2]}<br>"
+                "Aforo: %{customdata[3]}<br>"
+                "Telefono: %{customdata[4]}<br>"
+                "Web: %{customdata[5]}<extra></extra>"
+            ),
+            text=points["espazo"],
+            meta=points["point_id"],
+        )
     )
+
+    figure.data[0].customdata = points.loc[
+        :,
+        [
+            "point_id",
+            "concello",
+            "provincia_ui",
+            "aforamento_label",
+            "telefono_display",
+            "web_display",
+        ],
+    ].to_numpy()
+
+    selected_row = points[points["point_id"] == selected_point_id]
+    if not selected_row.empty:
+        selected_size = scale_marker_sizes(selected_row, size_mode).iloc[0] + 8
+        figure.add_trace(
+            go.Scattergeo(
+                lat=selected_row["latitud"],
+                lon=selected_row["longitud"],
+                mode="markers",
+                marker=go.scattergeo.Marker(
+                    size=selected_size,
+                    color="rgba(255,255,255,0.08)",
+                    line={"width": 3, "color": "#f5f8ff"},
+                ),
+                hoverinfo="skip",
+                showlegend=False,
+            )
+        )
+
+    figure.update_layout(
+        height=470,
+        margin=dict(l=0, r=0, t=0, b=0),
+        paper_bgcolor="rgba(0,0,0,0)",
+        clickmode="event+select",
+        uirevision="centers-map",
+        geo=dict(
+            projection_type="mercator",
+            fitbounds="locations",
+            bgcolor="rgba(0,0,0,0)",
+            showland=True,
+            landcolor="#121c2d" if dark_mode else "#edf4fb",
+            showocean=True,
+            oceancolor="#09111d" if dark_mode else "#dbe8f5",
+            showlakes=True,
+            lakecolor="#09111d" if dark_mode else "#dbe8f5",
+            showcoastlines=True,
+            coastlinecolor="#314561" if dark_mode else "#8ea5c4",
+            showcountries=False,
+            showsubunits=False,
+        ),
+    )
+
+    return figure
 
 
 def to_csv_bytes(dataframe: pd.DataFrame) -> bytes:
@@ -589,12 +808,100 @@ def format_cell(value: object) -> str:
     return str(value)
 
 
+def link_label(url: str) -> str:
+    parsed = urlparse(url)
+    host = parsed.netloc.replace("www.", "")
+    if "wikidata.org" in host:
+        entity = parsed.path.rstrip("/").split("/")[-1]
+        return f"Wikidata {entity}" if entity else "Wikidata"
+    return host or url
+
+
+def build_link_pill(url: str, label: str | None = None, css_class: str = "kg-link-pill") -> str:
+    safe_url = html.escape(url, quote=True)
+    safe_label = html.escape(label or link_label(url))
+    return (
+        f'<a class="{css_class}" href="{safe_url}" title="{safe_url}" target="_blank" rel="noopener noreferrer">'
+        f"{safe_label}</a>"
+    )
+
+
+def format_table_cell_html(value: object) -> str:
+    text = format_cell(value).strip()
+    if not text:
+        return ""
+
+    if " | " in text:
+        parts = [part.strip() for part in text.split(" | ") if part.strip()]
+        if parts and all(part.startswith(("http://", "https://")) for part in parts):
+            return '<div class="kg-link-stack">' + "".join(build_link_pill(part) for part in parts) + "</div>"
+
+    if text.startswith(("http://", "https://")):
+        return build_link_pill(text)
+
+    if "@" in text and " " not in text:
+        safe_text = html.escape(text)
+        return (
+            f'<a class="kg-link-pill" href="mailto:{safe_text}" title="{safe_text}" target="_blank" rel="noopener noreferrer">'
+            f"{safe_text}</a>"
+        )
+
+    return html.escape(text)
+
+
+def render_selected_center_card(center: pd.Series) -> None:
+    details = [
+        ("Concello", center.get("concello") or "N/D"),
+        ("Provincia", center.get("provincia_ui") or "N/D"),
+        ("Aforo", center.get("aforamento_label") or "N/D"),
+        ("Telefono", center.get("telefono_display") or "N/D"),
+        ("Email", center.get("email_display") or "N/D"),
+        ("Enderezo", center.get("enderezo") or "N/D"),
+    ]
+    detail_html = "".join(
+        (
+            '<div class="selected-center-item">'
+            f'<span class="selected-center-label">{html.escape(label)}</span>'
+            f'<div class="selected-center-value">{format_table_cell_html(value)}</div>'
+            "</div>"
+        )
+        for label, value in details
+    )
+
+    links: list[str] = []
+    for label, url in (
+        ("Wikidata espazo", center.get("wikidata_espazo")),
+        ("Wikidata concello", center.get("wikidata_concello")),
+        ("Wikidata provincia", center.get("wikidata_provincia")),
+        ("Web oficial", center.get("web")),
+    ):
+        if isinstance(url, str) and url.strip():
+            links.append(build_link_pill(url.strip(), label=label, css_class="selected-center-link"))
+
+    st.markdown(
+        (
+            '<div class="selected-center-card">'
+            '<div class="selected-center-eyebrow">Punto seleccionado en el mapa</div>'
+            f'<div class="selected-center-title">{html.escape(format_cell(center.get("espazo")) or "Centro cultural")}</div>'
+            f'<div class="selected-center-subtitle">{html.escape(format_cell(center.get("concello")))} · {html.escape(format_cell(center.get("provincia_ui")))}</div>'
+            f'<div class="selected-center-grid">{detail_html}</div>'
+            f'<div class="selected-center-links">{"".join(links) if links else "<span class=\"compact-note\">Sin enlaces disponibles para este punto.</span>"}</div>'
+            "</div>"
+        ),
+        unsafe_allow_html=True,
+    )
+
+
 def render_table_card(dataframe: pd.DataFrame, height: int = 260) -> None:
+    if dataframe.empty:
+        st.info("No hay filas para los filtros actuales.")
+        return
+
     display = dataframe.copy()
     for column in display.columns:
-        display[column] = display[column].map(format_cell)
+        display[column] = display[column].map(format_table_cell_html)
 
-    table_html = display.to_html(index=False, classes="kg-table", border=0, escape=True)
+    table_html = display.to_html(index=False, classes="kg-table", border=0, escape=False)
     st.markdown(
         f'<div class="kg-table-card"><div class="kg-table-scroll" style="max-height:{height}px">{table_html}</div></div>',
         unsafe_allow_html=True,
@@ -721,6 +1028,10 @@ def show_summary_tab(
     municipalities: pd.DataFrame,
     provinces: pd.DataFrame,
 ) -> None:
+    if centers.empty:
+        st.info("No hay centros visibles con los filtros actuales.")
+        return
+
     left, right = st.columns((1.1, 1.0), gap="large")
 
     with left:
@@ -843,11 +1154,42 @@ def show_map_tab(centers: pd.DataFrame, map_style: str, size_mode: str) -> None:
         """,
         unsafe_allow_html=True,
     )
-    st.caption("Los puntos se apoyan en las coordenadas del CSV limpio para representar cada centro cultural.")
-    st.pydeck_chart(build_map(points, map_style, size_mode), use_container_width=True)
+    st.caption(
+        "Haz clic en un marcador para fijarlo y abrir sus enlaces. La selección se mantiene visible debajo del mapa."
+    )
+
+    preselected_point_id = extract_selected_point_id(st.session_state.get(MAP_SELECTION_KEY))
+    map_figure = build_map_figure(points, map_style, size_mode, preselected_point_id)
+    event = st.plotly_chart(
+        map_figure,
+        use_container_width=True,
+        theme=None,
+        key=MAP_SELECTION_KEY,
+        on_select="rerun",
+        selection_mode="points",
+        config={"displayModeBar": False, "scrollZoom": True},
+    )
+
+    selected_point_id = extract_selected_point_id(event) or preselected_point_id
+    selected_center = points[points["point_id"] == selected_point_id]
+    if not selected_center.empty:
+        render_selected_center_card(selected_center.iloc[0])
+    else:
+        st.info("Todavia no hay un punto fijado. Selecciona uno en el mapa para ver sus enlaces.")
 
     render_table_card(
-        points.loc[:, ["espazo", "concello", "provincia_ui", "aforamento", "telefono", "web"]]
+        points.loc[
+            :,
+            [
+                "espazo",
+                "concello",
+                "provincia_ui",
+                "aforamento",
+                "telefono",
+                "wikidata_espazo",
+                "web",
+            ],
+        ]
         .rename(
             columns={
                 "espazo": "Espazo",
@@ -855,6 +1197,7 @@ def show_map_tab(centers: pd.DataFrame, map_style: str, size_mode: str) -> None:
                 "provincia_ui": "Provincia",
                 "aforamento": "Aforo",
                 "telefono": "Telefono",
+                "wikidata_espazo": "Wikidata",
                 "web": "Web",
             }
         ),
@@ -951,7 +1294,12 @@ def show_municipality_tab(
             point = municipality_centers.dropna(subset=["latitud", "longitud"])
             if not point.empty:
                 st.caption("Vista rapida del area donde estan los centros del concello.")
-                st.pydeck_chart(build_map(point, map_style, "Constante"), use_container_width=True)
+                st.plotly_chart(
+                    build_map_figure(point, map_style, "Constante"),
+                    use_container_width=True,
+                    theme=None,
+                    config={"displayModeBar": False, "scrollZoom": True},
+                )
 
 
 def show_quality_tab(centers: pd.DataFrame) -> None:
@@ -1026,7 +1374,7 @@ def main() -> None:
     st.set_page_config(
         page_title="Pezapa KG Explorer",
         layout="wide",
-        initial_sidebar_state="expanded",
+        initial_sidebar_state="auto",
     )
     inject_styles()
 
@@ -1060,15 +1408,14 @@ def main() -> None:
         search_term,
     )
 
-    filtered_municipalities = municipalities.copy()
-    filtered_provinces = provinces.copy()
-    if selected_province != "Todas":
-        filtered_municipalities = filtered_municipalities[
-            filtered_municipalities["provinceDisplay"] == selected_province
-        ]
-        filtered_provinces = filtered_provinces[
-            filtered_provinces["provinceDisplay"] == selected_province
-        ]
+    visible_municipalities = filtered_centers["concello"].dropna().unique().tolist()
+    visible_provinces = filtered_centers["provincia_ui"].dropna().unique().tolist()
+    filtered_municipalities = municipalities[
+        municipalities["municipalityName"].isin(visible_municipalities)
+    ].copy()
+    filtered_provinces = provinces[
+        provinces["provinceDisplay"].isin(visible_provinces)
+    ].copy()
 
     render_hero(municipalities, provinces)
 
